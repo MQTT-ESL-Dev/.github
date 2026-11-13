@@ -25,10 +25,9 @@ flowchart LR
 		Manager <-->|RESTful API| NormalServer
 	end
 	Client <-->|MQTT 协议| MQTT
-	Frontend[ESL Management Frontend]
-	LanguageFrontend[ESL 管理语言识别前端]
+	Frontend[ESL 管理前端]
 	NormalServer <-->|RESTful API| Frontend
-	MCP <-->|MCP 协议| LanguageFrontend
+	MCP <-->|MCP 协议| Frontend
 	subgraph Service["⚙️ Service"]
 		SQLite[(SQLite)]
 	end
@@ -61,5 +60,5 @@ xxxx
 ### RESTful Server
 xxxx
 
-### ESL Management Frontend
+### ESL 管理前端
 xxxx
