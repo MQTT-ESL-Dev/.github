@@ -43,15 +43,9 @@ flowchart LR
 	linkStyle 4,9 stroke:#7C3AED,stroke-width:2px;
 	linkStyle 5,6,7,8,10,11 stroke:#F59E0B,stroke-width:2px;
 	linkStyle 12 stroke:#10B981,stroke-width:2px;
-	click Client "#mqtt-client"
-	click Adapter "#mqtt-adapter"
-	click Manager "#info-manager"
-	click MCP "#mcp-server"
-	click NormalServer "#restful-server"
-	click Frontend "#esl-management-frontend"
 ```
 
-## 🧩 Detailed Features
+## 🧩 Module Features
 ### MQTT Adapter
 xxxx
 
