@@ -16,16 +16,16 @@ flowchart LR
 	subgraph MQTTSystem[MQTT ESL 管理系统]
 		Client[MQTT Client]
 		Adapter[MQTT Adapter]
-		Manager[Infomation Manager]
+		Manager[Info Manager]
 		MCP[MCP Server]
-		NormalServer["Normal Server (RESTful)"]
+		NormalServer["RESTful Server"]
 		Client <-->|服务调用| Adapter
 		Adapter <-->|管理请求| Manager
 		Manager <-->|MCP 调用| MCP
 		Manager <-->|RESTful API| NormalServer
 	end
 	Client <-->|MQTT 协议| MQTT
-	Frontend[ESL 管理前端]
+	Frontend[ESL Management Frontend]
 	LanguageFrontend[ESL 管理语言识别前端]
 	NormalServer <-->|RESTful API| Frontend
 	MCP <-->|MCP 协议| LanguageFrontend
@@ -43,5 +43,29 @@ flowchart LR
 	linkStyle 4,9 stroke:#7C3AED,stroke-width:2px;
 	linkStyle 5,6,7,8,10,11 stroke:#F59E0B,stroke-width:2px;
 	linkStyle 12 stroke:#10B981,stroke-width:2px;
+	click Client "#mqtt-client"
 	click Adapter "#mqtt-adapter"
+	click Manager "#info-manager"
+	click MCP "#mcp-server"
+	click NormalServer "#restful-server"
+	click Frontend "#esl-management-frontend"
 ```
+
+## 🧩 Detailed Features
+### MQTT Adapter
+xxxx
+
+### MQTT Client
+xxxx
+
+### Info Manager
+xxxx
+
+### MCP Server
+xxxx
+
+### RESTful Server
+xxxx
+
+### ESL Management Frontend
+xxxx
