@@ -46,19 +46,19 @@ flowchart LR
 
 ## 🧩 Module Features
 ### MQTT Adapter
-xxxx
+适配不同品牌、不同型号的 MQTT 响应，并对数据进行清洗和标准化处理后交给 `Info Manager`。
 
 ### MQTT Client
-xxxx
+通过 `paho-mqtt` 库与 MQTT Server 建立通信连接并进行相关操作。
 
 ### Info Manager
-xxxx
+负责数据库连接和信息存储。
 
 ### MCP Server
-xxxx
+提供 MCP 接口。
 
 ### RESTful Server
-xxxx
+提供 RESTful HTTP 接口。
 
 ### ESL 管理前端
-xxxx
+作为管理 ESL 的兜底 Web 界面，发送语音二进制文件给 `MCP Server`，由其进行语音转文字并生成对应指令。
