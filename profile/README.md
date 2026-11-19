@@ -8,12 +8,13 @@ MQTT ESL project develop team.
 ## 🏗️ Structure
 ```mermaid
 flowchart LR
-	ESL1["ESL 1<br/>品牌 A"] <-->|无线通信| AP[AP]
-	ESL2["ESL 2<br/>品牌 B"] <-->|无线通信| AP
-	ESL3["ESL 3<br/>品牌 C"] <-->|无线通信| AP
-	ESL4["ESL 4<br/>品牌 D"] <-->|无线通信| AP
-	AP <-->|MQTT 通信| MQTT[MQTT Server]
-	subgraph MQTTSystem[MQTT ESL 管理系统]
+	subgraph Hardware["📡 硬件"]
+		ESL1["ESL 1<br/>品牌 A"] <-->|无线通信| AP[AP]
+		ESL2["ESL 2<br/>品牌 B"] <-->|无线通信| AP
+		ESL3["ESL 3<br/>品牌 C"] <-->|无线通信| AP
+		ESL4["ESL 4<br/>品牌 D"] <-->|无线通信| AP
+	end
+	subgraph Backend["🧠 后端"]
 		Client[MQTT Client]
 		Adapter[MQTT Adapter]
 		Manager[Info Manager]
@@ -24,13 +25,17 @@ flowchart LR
 		Manager <-->|暴露接口| MCP
 		Manager <-->|暴露接口| NormalServer
 	end
-	Client <-->|MQTT 协议| MQTT
-	Frontend[ESL 管理前端]
-	NormalServer <-->|RESTful API| Frontend
-	MCP <-->|MCP 协议| Frontend
-	subgraph Service["⚙️ Service"]
+	subgraph Service["⚙️ 服务"]
+		MQTT[MQTT Server]
 		MySQL[(MySQL)]
 	end
+	Client <-->|MQTT 协议| MQTT
+	AP <-->|MQTT 通信| MQTT
+	subgraph FrontendSystem["🌐 前端"]
+		Frontend[ESL 管理前端]
+	end
+	NormalServer <-->|RESTful API| Frontend
+	MCP <-->|MCP 协议| Frontend
 	Manager <-->|数据读写| MySQL
 
 	classDef blue fill:#EFF6FF,stroke:#3B82F6,color:#1E3A8A;
@@ -39,8 +44,8 @@ flowchart LR
 	classDef green fill:#ECFDF5,stroke:#10B981,color:#065F46;
 	class MySQL green;
 	linkStyle 0,1,2,3 stroke:#3B82F6,stroke-width:2px;
-	linkStyle 4,9 stroke:#7C3AED,stroke-width:2px;
-	linkStyle 5,6,7,8,10,11 stroke:#F59E0B,stroke-width:2px;
+	linkStyle 8,9 stroke:#7C3AED,stroke-width:2px;
+	linkStyle 4,5,6,7,10,11 stroke:#F59E0B,stroke-width:2px;
 	linkStyle 12 stroke:#10B981,stroke-width:2px;
 ```
 
