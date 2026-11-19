@@ -68,5 +68,8 @@ flowchart LR
 ### RESTful Server
 提供 RESTful HTTP 接口。
 
-### ESL 管理前端
-作为管理 ESL 的兜底 Web 界面，发送语音二进制文件给 `MCP Server`，由其进行语音转文字并生成对应指令。
+### 对话控制界面
+通过文字输入生成控制指令，适合批量、粗略地修改多个 ESL。
+
+### 精细控制界面
+展示 ESL 在线状态，支持对单个 ESL 进行精细化修改。
