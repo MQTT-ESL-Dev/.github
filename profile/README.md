@@ -29,15 +29,15 @@ flowchart LR
 	NormalServer <-->|RESTful API| Frontend
 	MCP <-->|MCP 协议| Frontend
 	subgraph Service["⚙️ Service"]
-		SQLite[(SQLite)]
+		MySQL[(MySQL)]
 	end
-	Manager <-->|数据读写| SQLite
+	Manager <-->|数据读写| MySQL
 
 	classDef blue fill:#EFF6FF,stroke:#3B82F6,color:#1E3A8A;
 	classDef purple fill:#F3E8FF,stroke:#7C3AED,color:#4C1D95;
 	classDef orange fill:#FFF7ED,stroke:#F59E0B,color:#92400E;
 	classDef green fill:#ECFDF5,stroke:#10B981,color:#065F46;
-	class SQLite green;
+	class MySQL green;
 	linkStyle 0,1,2,3 stroke:#3B82F6,stroke-width:2px;
 	linkStyle 4,9 stroke:#7C3AED,stroke-width:2px;
 	linkStyle 5,6,7,8,10,11 stroke:#F59E0B,stroke-width:2px;
