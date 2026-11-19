@@ -21,8 +21,8 @@ flowchart LR
 		NormalServer["RESTful Server"]
 		Client <-->|服务调用| Adapter
 		Adapter <-->|管理请求| Manager
-		Manager <-->|MCP 调用| MCP
-		Manager <-->|RESTful API| NormalServer
+		Manager <-->|暴露接口| MCP
+		Manager <-->|暴露接口| NormalServer
 	end
 	Client <-->|MQTT 协议| MQTT
 	Frontend[ESL 管理前端]
