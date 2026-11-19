@@ -31,12 +31,15 @@ flowchart LR
 	end
 	Client <-->|MQTT 协议| MQTT
 	AP <-->|MQTT 通信| MQTT
-	subgraph FrontendSystem["🌐 前端"]
-		Frontend[ESL 管理前端]
-	end
-	NormalServer <-->|RESTful API| Frontend
-	MCP <-->|MCP 协议| Frontend
 	Manager <-->|数据读写| MySQL
+	subgraph FrontendSystem["🌐 前端"]
+		ChatUI["对话控制界面"]
+		DashboardUI["精细控制界面"]
+		RestClient[RESTful API Client]
+		ChatUI -->|文字指令| RestClient
+		DashboardUI -->|精细指令| RestClient
+	end
+	NormalServer <-->|HTTP 协议| RestClient
 
 	classDef blue fill:#EFF6FF,stroke:#3B82F6,color:#1E3A8A;
 	classDef purple fill:#F3E8FF,stroke:#7C3AED,color:#4C1D95;
@@ -45,8 +48,8 @@ flowchart LR
 	class MySQL green;
 	linkStyle 0,1,2,3 stroke:#3B82F6,stroke-width:2px;
 	linkStyle 8,9 stroke:#7C3AED,stroke-width:2px;
-	linkStyle 4,5,6,7,10,11 stroke:#F59E0B,stroke-width:2px;
-	linkStyle 12 stroke:#10B981,stroke-width:2px;
+	linkStyle 4,5,6,7,11,12,13 stroke:#F59E0B,stroke-width:2px;
+	linkStyle 10 stroke:#10B981,stroke-width:2px;
 ```
 
 ## 🧩 Module Features
